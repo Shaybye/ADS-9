@@ -4,14 +4,13 @@
 #include  <locale>
 #include  <cstdlib>
 #include  "bst.h"
-using namespace std;
 
 BST<std::string> makeTree(const char* filename) {
-BST<string> Tree;
-ifstream file(filename);
-string str = "";
+BST<std::string> Tree;
+std::ifstream file(filename);
+std::string str = "";
 if (!file) {
-    cout << "opening error" << endl;
+    std::cout << "opening error" << std::endl;
     return Tree;
 }
 while (!file.eof()) {
@@ -23,7 +22,7 @@ for (char& c : str) {
 }
 int len = str.length();
 bool inWord = false;
-string tempStr = "";
+std::string tempStr = "";
 for (int i = 0; i < len; i++) {
     if (str[i] >= 'a' && str[i] <= 'z') {
         inWord = true;
