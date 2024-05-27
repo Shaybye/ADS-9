@@ -15,25 +15,25 @@ if (!file) {
 }
 while (!file.eof()) {
     char sym = file.get();
-    str += sym;
+    strr += sym;
 }
-for (char& c : str) {
+for (char& c : strr) {
     c = tolower(c);
 }
-int len = str.length();
+int len = strr.length();
 bool inWord = false;
 std::string tempStrr = "";
 for (int i = 0; i < len; i++) {
-    if (str[i] >= 'a' && str[i] <= 'z') {
+    if (strr[i] >= 'a' && strr[i] <= 'z') {
         inWord = true;
     } else {
         inWord = false;
     }
     if (inWord) {
-        tempStr += str[i];
+        tempStrr += strr[i];
     } else {
-        Tree.add(tempStr);
-        tempStr = "";
+        Tree.add(tempStrr);
+        tempStrr = "";
     }
 }
 file.close();
