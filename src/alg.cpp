@@ -8,7 +8,7 @@
 BST<std::string> makeTree(const char* filename) {
 BST<std::string> Tree;
 std::ifstream file(filename);
-std::string str = "";
+std::string strr = "";
 if (!file) {
     std::cout << "opening error" << std::endl;
     return Tree;
@@ -22,7 +22,7 @@ for (char& c : str) {
 }
 int len = str.length();
 bool inWord = false;
-std::string tempStr = "";
+std::string tempStrr = "";
 for (int i = 0; i < len; i++) {
     if (str[i] >= 'a' && str[i] <= 'z') {
         inWord = true;
